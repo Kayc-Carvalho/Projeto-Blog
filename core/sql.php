@@ -1,5 +1,4 @@
 <?php
-
 function insert(string $entidade, array $dados) : string
 {
     $instrucao = "INSERT INTO {$entidade}";
@@ -16,7 +15,7 @@ function update(string $entidade, array $dados, array $criterio = []) : string
 {
     $instrucao = "UPDATE {$entidade}";
 
-    foreach($dados as $campo => $dados){
+    foreach($dados as $campo => $dado){
         $set[] = "{$campo} = {$dado}";
     }
 
@@ -63,6 +62,4 @@ function select(string $entidade, array $campos, array $criterio = [], string $o
 
     return $instrucao;
 }
-
-
 ?>
